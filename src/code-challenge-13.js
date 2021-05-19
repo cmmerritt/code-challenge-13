@@ -31,6 +31,13 @@ export const containsW = (str) => {
 
 // sigh ok moving on 
 
+// omg I had the test wrong smh
+
+export const isNum = (input) => {
+  let str = String(input);
+  return str.match(/[0-9]/) ? true : false;
+};
+
 export const containsWorld = (input) => {
   return input.match(/[w][o][r][l][d]/) ? true : false;
 };

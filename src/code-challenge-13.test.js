@@ -61,11 +61,12 @@ describe('Testing challenge 2', () => {
 });
 
 describe('Testing challenge 3', () => {
-  test.skip('true if input contains number, else false', () => {
+  test('true if input contains number, else false', () => {
     expect(isNum(1234567890)).toBe(true);
-    expect(isNum('12345')).toBe(false);
+    expect(isNum('12345')).toBe(true);
     expect(isNum('h3llo w0rld')).toBe(true);
     expect(isNum('hello world')).toBe(false);
+    expect(isNum('')).toBe(false);
   });
 });
 
