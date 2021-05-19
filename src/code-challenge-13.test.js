@@ -1,4 +1,4 @@
-import { sortByChildren, containsW, isNum, containsWorld } from './code-challenge-13';
+import { sortByChildren, containsW, isNum, containsWorld, isCapitalized } from './code-challenge-13';
 
 let characters = [
   {
@@ -74,5 +74,13 @@ describe('Testing challenge 4', () => {
     expect(containsWorld('hello world')).toBe(true);
     expect(containsWorld('Hello World')).toBe(false);
     expect(containsWorld('hello everyone')).toBe(false);
+  });
+});
+
+describe('Testing challenge 4', () => {
+  test('return words beginning with a capitalized letter', () => {
+    expect(isCapitalized('We only want to Return the Words that begin With a capital Letter')).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
+    expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
+    expect(isCapitalized('these words are all failures')).toStrictEqual([]);
   });
 });

@@ -31,8 +31,10 @@ export const containsW = (str) => {
 
 // sigh ok moving on 
 
-
-
 export const containsWorld = (input) => {
   return input.match(/[w][o][r][l][d]/) ? true : false;
+};
+
+export const isCapitalized = (input) => {
+  return input.match(/[A-Z][a-z]*/);
 };
