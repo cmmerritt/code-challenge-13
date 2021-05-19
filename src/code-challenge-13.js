@@ -46,4 +46,13 @@ export const isCapitalized = (input) => {
   if (input.match(/[A-Z]/g)) {
     return input.match(/\b[A-Z][a-z]+\b/g);
   } else return [];
+}; 
+
+// need to fix this so whatever is between ' ' counts as a unit
+
+export const citiesAtoJ = (arr) => {
+  let str = String(arr);
+  let split = str.replaceAll(',', ', ');
+  console.log(split);
+  return split.match(/\b[A-J][a-z]+\b/g);
 };
