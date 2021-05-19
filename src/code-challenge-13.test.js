@@ -78,7 +78,7 @@ describe('Testing challenge 4', () => {
 });
 
 describe('Testing challenge 4', () => {
-  test('return words beginning with a capitalized letter', () => {
+  test.skip('return words beginning with a capitalized letter', () => {
     expect(isCapitalized('We only want to Return the Words that begin With a capital Letter')).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
     expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
     expect(isCapitalized('these words are all failures')).toStrictEqual([]);
