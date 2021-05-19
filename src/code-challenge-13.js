@@ -31,10 +31,28 @@ export const containsW = (str) => {
 
 // sigh ok moving on 
 
+// omg I had the test wrong smh
+
+export const isNum = (input) => {
+  let str = String(input);
+  return str.match(/[0-9]/) ? true : false;
+};
+
 export const containsWorld = (input) => {
   return input.match(/[w][o][r][l][d]/) ? true : false;
 };
 
 export const isCapitalized = (input) => {
-  return input.match(/[A-Z][a-z]*/);
+  if (input.match(/[A-Z]/g)) {
+    return input.match(/\b[A-Z][a-z]+\b/g);
+  } else return [];
+}; 
+
+// need to fix this so whatever is between ' ' counts as a unit
+
+export const citiesAtoJ = (arr) => {
+  let str = String(arr);
+  let split = str.replaceAll(',', ', ');
+  console.log(split);
+  return split.match(/\b[A-J][a-z]+\b/g);
 };

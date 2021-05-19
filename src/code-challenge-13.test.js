@@ -1,4 +1,4 @@
-import { sortByChildren, containsW, isNum, containsWorld, isCapitalized } from './code-challenge-13';
+import { sortByChildren, containsW, isNum, containsWorld, isCapitalized, citiesAtoJ } from './code-challenge-13';
 
 let characters = [
   {
@@ -61,11 +61,12 @@ describe('Testing challenge 2', () => {
 });
 
 describe('Testing challenge 3', () => {
-  test.skip('true if input contains number, else false', () => {
+  test('true if input contains number, else false', () => {
     expect(isNum(1234567890)).toBe(true);
-    expect(isNum('12345')).toBe(false);
+    expect(isNum('12345')).toBe(true);
     expect(isNum('h3llo w0rld')).toBe(true);
     expect(isNum('hello world')).toBe(false);
+    expect(isNum('')).toBe(false);
   });
 });
 
@@ -77,10 +78,18 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
-  test.skip('return words beginning with a capitalized letter', () => {
+describe('Testing challenge 5', () => {
+  test('return words beginning with a capitalized letter', () => {
     expect(isCapitalized('We only want to Return the Words that begin With a capital Letter')).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
     expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
     expect(isCapitalized('these words are all failures')).toStrictEqual([]);
+  });
+});
+
+describe('Testing challenge 6', () => {
+  test.skip('return array of cities beginning A-J', () => {
+    expect(citiesAtoJ(['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'])).toStrictEqual(['Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken']);
+    expect(citiesAtoJ(['Albuquerque', 'Chicago', 'Philadelphia', 'Newark', 'Sacramento', 'Eugene'])).toStrictEqual(['Albuquerque', 'Chicago', 'Eugene']);
+    expect(citiesAtoJ([])).toStrictEqual([]);
   });
 });
