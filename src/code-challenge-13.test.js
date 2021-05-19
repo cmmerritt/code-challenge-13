@@ -87,7 +87,7 @@ describe('Testing challenge 5', () => {
 });
 
 describe('Testing challenge 6', () => {
-  test('return array of cities beginning A-J', () => {
+  test.skip('return array of cities beginning A-J', () => {
     expect(citiesAtoJ(['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'])).toStrictEqual(['Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken']);
     expect(citiesAtoJ(['Albuquerque', 'Chicago', 'Philadelphia', 'Newark', 'Sacramento', 'Eugene'])).toStrictEqual(['Albuquerque', 'Chicago', 'Eugene']);
     expect(citiesAtoJ([])).toStrictEqual([]);
