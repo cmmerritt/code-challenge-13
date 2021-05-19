@@ -1,4 +1,4 @@
-import { sortByChildren } from './code-challenge-13';
+import { sortByChildren, containsW, isNum, containsWorld, isCapitalized } from './code-challenge-13';
 
 let characters = [
   {
@@ -49,5 +49,38 @@ describe('Testing challenge 1', () => {
   test('It should sort the characters by number of children', () => {
     expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
     expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
+  });
+});
+
+describe('Testing challenge 2', () => {
+  test('true if str contains lowercase w, else false', () => {
+    expect(containsW('hello world')).toBe(true);
+    expect(containsW('Hello World')).toBe(false);
+    expect(containsW('hello everyone')).toBe(false);
+  });
+});
+
+describe('Testing challenge 3', () => {
+  test.skip('true if input contains number, else false', () => {
+    expect(isNum(1234567890)).toBe(true);
+    expect(isNum('12345')).toBe(false);
+    expect(isNum('h3llo w0rld')).toBe(true);
+    expect(isNum('hello world')).toBe(false);
+  });
+});
+
+describe('Testing challenge 4', () => {
+  test('true if input contains word world in lc, else false', () => {
+    expect(containsWorld('hello world')).toBe(true);
+    expect(containsWorld('Hello World')).toBe(false);
+    expect(containsWorld('hello everyone')).toBe(false);
+  });
+});
+
+describe('Testing challenge 4', () => {
+  test.skip('return words beginning with a capitalized letter', () => {
+    expect(isCapitalized('We only want to Return the Words that begin With a capital Letter')).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
+    expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
+    expect(isCapitalized('these words are all failures')).toStrictEqual([]);
   });
 });
