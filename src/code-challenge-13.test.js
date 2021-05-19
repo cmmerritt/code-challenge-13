@@ -1,4 +1,4 @@
-import { sortByChildren } from './code-challenge-13';
+import { sortByChildren, containsW } from './code-challenge-13';
 
 let characters = [
   {
@@ -49,5 +49,13 @@ describe('Testing challenge 1', () => {
   test('It should sort the characters by number of children', () => {
     expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
     expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
+  });
+});
+
+describe('Testing challenge 2', () => {
+  test('true if str contains lowercase w, else false', () => {
+    expect(containsW('hello world')).toBe(true);
+    expect(containsW('Hello World')).toBe(false);
+    expect(containsW('hello everyone')).toBe(false);
   });
 });
