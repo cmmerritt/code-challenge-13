@@ -1,4 +1,4 @@
-import { sortByChildren, containsW } from './code-challenge-13';
+import { sortByChildren, containsW, isNum, containsWorld } from './code-challenge-13';
 
 let characters = [
   {
@@ -57,5 +57,22 @@ describe('Testing challenge 2', () => {
     expect(containsW('hello world')).toBe(true);
     expect(containsW('Hello World')).toBe(false);
     expect(containsW('hello everyone')).toBe(false);
+  });
+});
+
+describe('Testing challenge 3', () => {
+  test.skip('true if input contains number, else false', () => {
+    expect(isNum(1234567890)).toBe(true);
+    expect(isNum('12345')).toBe(false);
+    expect(isNum('h3llo w0rld')).toBe(true);
+    expect(isNum('hello world')).toBe(false);
+  });
+});
+
+describe('Testing challenge 4', () => {
+  test('true if input contains word world in lc, else false', () => {
+    expect(containsWorld('hello world')).toBe(true);
+    expect(containsWorld('Hello World')).toBe(false);
+    expect(containsWorld('hello everyone')).toBe(false);
   });
 });
