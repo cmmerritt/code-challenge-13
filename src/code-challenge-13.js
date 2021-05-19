@@ -43,5 +43,7 @@ export const containsWorld = (input) => {
 };
 
 export const isCapitalized = (input) => {
-  return input.match(/[A-Z][a-z]*/);
+  if (input.match(/[A-Z]/g)) {
+    return input.match(/\b[A-Z][a-z]+\b/g);
+  } else return [];
 };
